@@ -67,6 +67,21 @@ export interface IInputSelect {
   control: any;
 }
 
+export interface IInputSearch {
+  borderColor: string;
+  backgroundColor: string;
+  keyboardType?: KeyboardTypeOptions;
+  firstIcon?: ReactNode;
+  placeholder: string;
+  placeholderTextColor: string;
+  autoCorrect?: boolean;
+  isSecretText?: boolean;
+  inputColor: string;
+  lastIcon?: ReactNode;
+  value?: string;
+  onChange: (props: string) => void;
+}
+
 //customBTN
 export interface IButton {
   buttonStyle: StyleProp<any>;

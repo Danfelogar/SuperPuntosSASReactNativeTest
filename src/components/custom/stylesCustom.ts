@@ -135,13 +135,41 @@ export function inputSingleImage() {
       fontSize: 20.5,
       textAlign: 'center',
       fontWeight: '700',
-      fontFamily: 'Roboto-Black',
     },
     helperText: {
       fontSize: 15.2,
       paddingLeft: 10,
       // fontWeight: '400',
       color: '#ff4d4f',
+    },
+  });
+}
+
+export function inputSearchStyles() {
+  return StyleSheet.create({
+    wrapperStandard: {
+      display: 'flex',
+      flexDirection: 'column',
+      // backgroundColor: 'orange',
+    },
+    contentInputGeneric: {
+      display: 'flex',
+      borderRadius: 100,
+      paddingVertical: 6,
+      paddingHorizontal: 10,
+      width: '100%',
+      borderWidth: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    contentInput: {
+      display: 'flex',
+      fontSize: 16.5,
+      fontWeight: '400',
+      flexGrow: 1,
+      height: '100%',
+      padding: 10,
     },
   });
 }

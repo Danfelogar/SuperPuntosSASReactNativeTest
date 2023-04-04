@@ -11,7 +11,8 @@ import {IInputSingleImg} from './types';
 import {PermissionsContext} from '../../context';
 import {Button} from './Button';
 import {inputSingleImage} from './stylesCustom';
-import {heightFullScreen, widthFullScreen} from '../../utils';
+import {heightFullScreen} from '../../utils';
+import {managementApi} from '../../services';
 
 export interface source {
   uri: string | undefined;
@@ -297,19 +298,21 @@ export function InputSingleImage({
             const formData = new FormData();
 
             formData.append('image', target);
-            // const {data} = await managementApi({
-            //   method: 'post',
-            //   url: '/upload',
-            //   headers: {
-            //     Accept: 'application/json, text/plain, */*',
-            //     'Content-Type': 'multipart/form-data',
-            //     'accept-language': 'es-ES,es;q=0.9,en;q=0.8',
-            //     'Access-Control-Allow-Origin': '*',
-            //   },
-            //   data: formData,
-            // });
-            console.log('img====>', {formData});
-            onChange(formData);
+            const {data} = await managementApi({
+              method: 'post',
+              url: '/upload',
+              headers: {
+                Accept: 'application/json, text/plain, */*',
+                'Content-Type': 'multipart/form-data',
+                'accept-language': 'es-ES,es;q=0.9,en;q=0.8',
+                'Access-Control-Allow-Origin': '*',
+              },
+              data: formData,
+            });
+            //seteamos la nueva imagen traida del backend con cloudinary en el formulario con useForm y renderizamos de una
+            onChange(data.message);
+            // console.log('img====>', {formData});
+            //onChange(formData);
             setIsLoading(false);
           } catch (error) {
             console.log({error});
@@ -318,22 +321,22 @@ export function InputSingleImage({
         };
 
         return (
-          <View>
+          <View style={{width: '100%'}}>
             {value && (
               <View
                 style={{
-                  width: widthFullScreen * 0.7,
+                  width: '100%',
                   paddingHorizontal: 1,
                   flexDirection: 'column',
                   alignItems: 'center',
                 }}>
                 <Image
-                  // source={
-                  //   value
-                  //     ? {uri: value}
-                  //     : require('../../public/undraw_Air_support_re_nybl.png')
-                  // }
-                  source={require('../../public/undraw_Air_support_re_nybl.png')}
+                  source={
+                    value
+                      ? {uri: value}
+                      : require('../../public/undraw_Air_support_re_nybl.png')
+                  }
+                  //source={require('../../public/undraw_Air_support_re_nybl.png')}
                   style={{
                     width: '100%',
                     height: heightFullScreen * 0.3,

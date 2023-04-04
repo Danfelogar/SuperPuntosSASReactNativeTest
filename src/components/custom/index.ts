@@ -1,6 +1,7 @@
 export * from './InputGeneric';
 export * from './InputSelect';
 export * from './InputSingleImage';
+export * from './InputSearch';
 export * from './CustomText';
 export * from './stylesCustom';
 export * from './Button';

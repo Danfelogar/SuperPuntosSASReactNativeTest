@@ -1,18 +1,17 @@
 import React, {useContext, useEffect} from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import {Login, Register, UserList} from '../screens';
+
+import {Login, Register, UserDetails, UserList} from '../screens';
 import {AuthContext} from '../context';
 import SplashScreen from 'react-native-splash-screen';
 
 export type RootStackMainParams = {
-  // TabNavigation: undefined;
-  // Onboarding: undefined;
   Login: undefined;
   Register: undefined;
   UserList: undefined;
-  // WebScreen: {
-  //   idForIND: string;
-  // };
+  UserDetails: {
+    id: number;
+  };
 };
 
 const Stack = createStackNavigator<RootStackMainParams>();
@@ -46,9 +45,9 @@ export function NavigationMain() {
       {isLoggedIn === 'login' && (
         <>
           <Stack.Screen name="UserList" component={UserList} />
+          <Stack.Screen name="UserDetails" component={UserDetails} />
         </>
       )}
-      {/* <Stack.Screen name="UserDetails" component={UserDetails} /> */}
     </Stack.Navigator>
   );
 }
