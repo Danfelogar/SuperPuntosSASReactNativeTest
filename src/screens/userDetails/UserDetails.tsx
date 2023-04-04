@@ -73,6 +73,14 @@ export function UserDetails({route, navigation}: Props) {
             }
           />
         </View>
+        <CustomText
+          fontSize={26}
+          fontWeight={'bold'}
+          textAlign={'center'}
+          marginBottom={0}
+          color={colors.textPrimary}>
+          {`Updating user with id: ${id}`}
+        </CustomText>
         <View style={zoneInputWrapper}>
           {isLoading2 && !userDetails && (
             <View
