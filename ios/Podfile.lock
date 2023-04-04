@@ -337,6 +337,8 @@ PODS:
     - RCTTypeSafety
     - React-Core
     - ReactCommon/turbomodule/core
+  - react-native-splash-screen (3.3.0):
+    - React-Core
   - React-perflogger (0.71.5)
   - React-RCTActionSheet (0.71.5):
     - React-Core/RCTActionSheetHeaders (= 0.71.5)
@@ -487,6 +489,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - react-native-image-picker (from `../node_modules/react-native-image-picker`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-splash-screen (from `../node_modules/react-native-splash-screen`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -571,6 +574,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-image-picker"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
+  react-native-splash-screen:
+    :path: "../node_modules/react-native-splash-screen"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -648,6 +653,7 @@ SPEC CHECKSUMS:
   React-logger: 94ec392ae471683635e4bf874d4e82f675399d2d
   react-native-image-picker: ec9b713e248760bfa0f879f0715391de4651a7cb
   react-native-safe-area-context: 39c2d8be3328df5d437ac1700f4f3a4f75716acc
+  react-native-splash-screen: 4312f786b13a81b5169ef346d76d33bc0c6dc457
   React-perflogger: 883a55a9a899535eaf06d0029108ef9ef22cce92
   React-RCTActionSheet: 1a3b8416688a3d291367be645022886f71d6842a
   React-RCTAnimation: e5560cb72d91ba35151d51e2eb0d467b42763f43
@@ -664,7 +670,7 @@ SPEC CHECKSUMS:
   RNCAsyncStorage: b90b71f45b8b97be43bc4284e71a6af48ac9f547
   RNCMaskedView: 949696f25ec596bfc697fc88e6f95cf0c79669b6
   RNGestureHandler: 071d7a9ad81e8b83fe7663b303d132406a7d8f39
-  RNPermissions: 29f5b625de0e6a2bff5130c3e60ae94d5921febb
+  RNPermissions: b0e38eca4ce809f39a1655c7dfb8fe957b844cfc
   RNScreens: 218801c16a2782546d30bd2026bb625c0302d70f
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608

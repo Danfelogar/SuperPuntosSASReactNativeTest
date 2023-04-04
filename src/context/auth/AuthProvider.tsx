@@ -57,7 +57,7 @@ export const AuthProvider: FC<Props> = ({children}) => {
         // login(data as IUser);
         const token = res.data.key;
         if (token) {
-          // login(token);
+          login(token);
         }
         return res;
       })
