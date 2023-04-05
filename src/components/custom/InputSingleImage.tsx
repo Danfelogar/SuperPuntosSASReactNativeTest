@@ -12,7 +12,7 @@ import {PermissionsContext} from '../../context';
 import {Button} from './Button';
 import {inputSingleImage} from './stylesCustom';
 import {heightFullScreen} from '../../utils';
-import {managementApi} from '../../services';
+// import {managementApi} from '../../services';
 
 export interface source {
   uri: string | undefined;
@@ -297,22 +297,23 @@ export function InputSingleImage({
             //investigar mas sobre FormData
             const formData = new FormData();
 
-            formData.append('image', target);
-            const {data} = await managementApi({
-              method: 'post',
-              url: '/upload',
-              headers: {
-                Accept: 'application/json, text/plain, */*',
-                'Content-Type': 'multipart/form-data',
-                'accept-language': 'es-ES,es;q=0.9,en;q=0.8',
-                'Access-Control-Allow-Origin': '*',
-              },
-              data: formData,
-            });
+            // formData.append('file', target);
+            formData.append('imagen', target);
+            // const {data} = await managementApi({
+            //   method: 'post',
+            //   url: '/upload',
+            //   headers: {
+            //     Accept: 'application/json, text/plain, */*',
+            //     'Content-Type': 'multipart/form-data',
+            //     'accept-language': 'es-ES,es;q=0.9,en;q=0.8',
+            //     'Access-Control-Allow-Origin': '*',
+            //   },
+            //   data: formData,
+            // });
             //seteamos la nueva imagen traida del backend con cloudinary en el formulario con useForm y renderizamos de una
-            onChange(data.message);
-            // console.log('img====>', {formData});
-            //onChange(formData);
+            //onChange(data.message);
+            //console.log('img====>', data.message);
+            onChange(formData);
             setIsLoading(false);
           } catch (error) {
             console.log({error});
@@ -350,7 +351,7 @@ export function InputSingleImage({
                     backgroundColor: backgroundColor,
                   }}
                   activeOpacity={0.9}
-                  onPress={() => onChange('')}
+                  onPress={() => onChange(null)}
                   textContent={
                     <Text
                       style={{
